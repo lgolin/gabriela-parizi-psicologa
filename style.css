@@ -23,10 +23,13 @@ img {
   --header-height: 4.5rem;
 
   /* colors */
-  --hue: 280;
+  --hue: 190; /* azul */
+  --hue2: 342; /* rosa */
+  --hue-dp: 330; /* rosa */
   /* HSL color mode */
   --base-color: hsl(var(--hue) 36% 57%);
-  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-second: hsl(var(--hue2) 65% 88%);
+  --base-color-dark-pink: hsl(var(--hue-dp) 43% 57%);
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 46%);
@@ -77,20 +80,12 @@ body {
 
 .divider-1 {
   height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 36%, 57%, 1),
-    hsla(var(--hue), 65%, 88%, 0.34)
-  );
+  background: linear-gradient(270deg, hsla(var(--hue-dp), 36%, 57%, 1), hsla(var(--hue), 65%, 88%, 0.34));
 }
 
 .divider-2 {
   height: 1px;
-  background: linear-gradient(
-    270deg,
-    hsla(var(--hue), 65%, 88%, 0.34),
-    hsla(var(--hue), 36%, 57%, 1)
-  );
+  background: linear-gradient(270deg, hsla(var(--hue-dp), 65%, 88%, 0.34), hsla(var(--hue-dp), 36%, 57%, 1));
 }
 
 /*====  LAYOUT ============================ */
@@ -121,7 +116,8 @@ body {
 }
 
 .section header strong {
-  color: var(--base-color);
+  /* color: var(--base-color); */
+  color: var(--base-color-dark-pink);
 }
 
 #header {
@@ -175,7 +171,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a.active {
-  color: var(--base-color);
+  color: var(--base-color-alt);
 }
 
 nav ul li a::after {
@@ -351,7 +347,7 @@ nav.show div.icon-close {
 .card {
   padding: 3.625rem 2rem;
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
-  border-bottom: 0.25rem solid var(--base-color);
+  border-bottom: 0.25rem solid var(--base-color-dark-pink);
   border-radius: 0.25rem 0.25rem 0 0;
   text-align: center;
 }
@@ -360,7 +356,7 @@ nav.show div.icon-close {
   display: block;
   margin-bottom: 1.5rem;
   font-size: 5rem;
-  color: var(--base-color);
+  color: var(--base-color-dark-pink);
 }
 
 .card .title {
@@ -431,7 +427,8 @@ nav.show div.icon-close {
 }
 
 .swiper-pagination-bullet-active {
-  background: var(--base-color);
+  /* background: var(--base-color); */
+  background: var(--base-color-dark-pink);
 }
 
 /*====  CONTACT ============================ */
@@ -459,7 +456,7 @@ nav.show div.icon-close {
 }
 
 #contact ul li i {
-  color: var(--base-color);
+  color: var(--base-color-dark-pink);
 }
 
 /*====  FOOTER ============================ */
@@ -529,6 +526,29 @@ footer .social a:hover {
 }
 
 /*========= MEDIA QUERIES =========*/
+
+/* medium devices: 767 > */
+
+/* large devices: 992 > */
+@media (min-width: 992px) {
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
+  }
+
+  /* services */
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* large devices: 1023 > */
+
 /* extra large devices: 1200 > */
 @media (min-width: 1200px) {
   /* reusable classes */
@@ -649,12 +669,3 @@ footer .social a:hover {
     font-size: 2.25rem;
   }
 }
-/* large devices: 1023 > */
-/* large devices: 992 > */
-@media (min-width: 992px) {
-  :root {
-    --title-font-size: 2.25rem;
-    --subtitle-font-size: 1.125rem;
-  }
-}
-/* medium devices: 767 > */
