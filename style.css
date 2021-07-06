@@ -27,9 +27,11 @@ img {
   --hue2: 342; /* rosa */
   --hue-dp: 330; /* rosa */
   /* HSL color mode */
-  --base-color: hsl(var(--hue) 36% 57%);
+  /* --base-color: hsl(var(--hue) 36% 57%); */
+  --base-color: hsl(var(--hue) 72% 42%);
   --base-color-second: hsl(var(--hue2) 65% 88%);
   --base-color-dark-pink: hsl(var(--hue-dp) 43% 57%);
+  /* --base-color-alt: hsl(var(--hue) 57% 53%); */
   --base-color-alt: hsl(var(--hue) 57% 53%);
   --title-color: hsl(var(--hue) 41% 10%);
   --text-color: hsl(0 0% 46%);
